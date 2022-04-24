@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+    snapcast-server:
+        image: ivdata/snapserver
+        ports:
+            - '1704:1704'
+            - '1705:1705'
+            - '1780:1780'
+        volumes:
+            - '../yttv/.yttv_config/sockets/yttv-client.0.audio:/tmp/snapcast.0:ro'
+            - '../yttv/.yttv_config/sockets/yttv-client.1.audio:/tmp/snapcast.1:ro'
+            - './snapserver.conf:/etc/snapserver.conf'
+

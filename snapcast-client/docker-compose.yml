@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+    snapcast-client:
+        build:
+            context: .
+        environment:
+            SNAPCAST_CLIENT_HOST_ID: snapcast-client
+            SNAPCAST_SERVER_HOST: $SNAPCAST_SERVER_HOST
+        devices:
+            - '/dev/snd:/dev/snd'
